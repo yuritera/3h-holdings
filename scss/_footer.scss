@@ -1,0 +1,39 @@
+.ft{
+  &_wrap{
+    padding:100px 0;
+    @include flexbox;
+  }
+  &_box{
+    width: 30%;
+    border-left:solid 1px #B5B5B5;
+    padding-left:1em;
+  }
+  &_navi{
+    &_list{
+      list-style: none;
+      a{
+        text-decoration: none;
+        color:#ffffff;
+      }
+      >li{
+        >a{
+          margin-bottom:1em;
+          display: inline-block;
+        }
+        >ul{
+          margin:0 0 1.5em 0.5em;
+        }
+        li{
+          font-size: 0.9em;
+          list-style: none;
+          margin-bottom:0.4em;
+          &::before{
+            content:"-";
+            color:#ffffff;
+            padding-right:0.2em;
+          }
+        }
+      }
+    }
+  }
+}

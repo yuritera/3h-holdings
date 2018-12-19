@@ -1,0 +1,21 @@
+.header{
+  &_logo{
+    padding:0.4em 0.5em;
+  }
+  &_navi{
+    position: fixed;
+    top:0;
+    right:0;
+    z-index: 999;
+    width:80%;
+    &_list{
+      display: block;
+      li{
+        width:100%;
+      }
+      a{
+        width:100%;
+      }
+    }
+  }
+}

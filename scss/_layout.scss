@@ -1,0 +1,24 @@
+.ly{
+  &_header{
+    position: fixed;
+    height:50px;
+    background: #ffffff;
+    width: 100%;
+    z-index: 10;
+    .ly_inner{
+      @include flexbox;
+      @include flexhashi;
+    }
+  }
+  &_footer{
+    background:#494949;
+  }
+  &_inner{
+    width:94%;
+    max-width: 960px;
+    margin:0 auto;
+  }
+  &_wrap{
+    padding-top:50px;
+  }
+}

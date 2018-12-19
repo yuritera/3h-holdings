@@ -2,24 +2,16 @@
 /*---------
 ダッシュボード用
 --------------------------------*/
-//ダッシュボードウィジェットを削除します。
-function remove_dashboard_widget() {
- 	remove_meta_box( 'dashboard_activity', 'dashboard', 'normal' ); // アクティビティ
- 	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' ); // クイックドラフト
- 	remove_meta_box( 'dashboard_primary', 'dashboard', 'side' ); // WordPressニュース
-}
-add_action('wp_dashboard_setup', 'remove_dashboard_widget' );
 
 
 /*---------
 投稿・コンテンツ入力画面用
 --------------------------------*/
 //管理画面css
-function custom_enqueue($hook) {
-  global $post;
-  wp_enqueue_style('custom_css', get_template_directory_uri() . '/admin.css');
+function editor_gutenberg_styles() {
+	 wp_enqueue_style( 'tabor-gutenberg', get_stylesheet_directory_uri() . '/admin.css' , false, '1.0', 'all' );
 }
-add_action('admin_enqueue_scripts', 'custom_enqueue');
+add_action( 'enqueue_block_editor_assets', 'editor_gutenberg_styles' );
 //画像相対パス設定
 function my_remove_img_attr($html, $id, $alt, $title, $align, $size){
     $html = preg_replace('/ title=".+"/', '', $html);

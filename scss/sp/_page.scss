@@ -1,0 +1,73 @@
+//home
+.mv{
+  height:280px;
+  background-position: top center;
+  &_bg{
+    padding:0.4em;
+  }
+  &_txt{
+    font-size: 0.8rem;
+  }
+  &_ttl{
+    font-size: 0.9rem;
+    margin-bottom:0.2em;
+  }
+}
+.topnews{
+  padding:3em 0;
+  &_ttl{
+    font-size:1.6em;
+    margin-bottom:0.5em;
+  }
+  &_item{
+    a{
+      font-size:0.8em;
+      justify-content: flex-start;
+      -webkit-box-pack: start;
+    }
+  }
+  &_txt{
+    width:100%;
+  }
+  &_more{
+    text-align: center;
+  }
+  &_new{
+    font-size:0.75em;
+  }
+  &_day{
+    margin-right:2em;
+  }
+}
+.home{
+  &_content{
+    padding:0 0.5em;
+    display: block;
+    margin-bottom:2em;
+    &_item{
+      &.yoko{
+        a{
+          display: block;
+        }
+      }
+      &.tate{
+        width: 100%;
+      }
+    }
+    &_img{
+      .yoko &{
+        width:100%;
+      }
+    }
+    &_txt{
+      font-size:0.8em;
+      padding:0.8em;
+      .yoko &{
+        width:100%;
+      }
+    }
+    &_ttl{
+      padding:1em 0.7em;
+    }
+  }
+}
