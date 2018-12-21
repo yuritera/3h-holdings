@@ -98,7 +98,10 @@
         color:#ffffff;
       }
       &.tate{
-        width: 49%;
+        width: 49.5%;
+      }
+      &.three{
+        width:32.8%;
       }
       &.yoko{
         width: 100%;
@@ -123,9 +126,72 @@
     }
     &_txt{
       padding:1.5em;
-      font-size:0.9em;
+      font-size:0.8em;
       .yoko &{
         width:50%;
+      }
+    }
+  }
+}
+//news
+.news{
+  padding:100px 0;
+  &_ttl{
+    font-size:1.8em;
+    margin-bottom:1em;
+  }
+  &_list{
+    margin-bottom:1em;
+  }
+  &_item{
+    list-style: none;
+    a{
+      display: block;
+      font-size:0.9em;
+      border-bottom:solid 1px #5E5E5E;
+      padding:0.5em 0;
+      min-height:3em;
+      text-decoration: none;
+      @include flexbox;
+      @include flexhashi;
+      align-items: flex-start;
+      -webkit-box-align: start;
+      color:#333333;
+      &:hover{
+        background:#D8D8D8;
+      }
+      span{
+        display:inline-block;
+      }
+
+    }
+  }
+  &_day{
+    font-size:0.9em;
+    width:6em;
+    padding-top: 0.2em;
+  }
+  &_new{
+    background:#D64949;
+    color:#ffffff;
+    width:4em;
+    font-size:0.8em;
+    text-align: center;
+    padding-top: 0.2em;
+  }
+  &_txt{
+    width:100%;
+  }
+  &_more{
+    text-align: right;
+    a{
+      display: inline-block;
+      padding:0.5em 1em;
+      background: #F2F2F2;
+      text-decoration: none;
+      color:#232323;
+      &:hover{
+        background: #E5E5E5;
       }
     }
   }

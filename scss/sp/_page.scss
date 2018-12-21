@@ -50,19 +50,22 @@
           display: block;
         }
       }
-      &.tate{
+      &.tate,
+      &.three{
         width: 100%;
       }
     }
     &_img{
-      .yoko &{
+      .yoko &
+      .three &{
         width:100%;
       }
     }
     &_txt{
       font-size:0.8em;
       padding:0.8em;
-      .yoko &{
+      .yoko &,
+      .three &{
         width:100%;
       }
     }

@@ -45,17 +45,39 @@
   <?php if(is_home()){echo '<h1'; }else{ echo '<p'; } ?> class="header_logo"><a href="<?php echo home_url( '/' ); ?>">
   <img src="<?php echo get_template_directory_uri(); ?>/images/sitelogo.png" alt="３H">
   </a><?php if(is_home()){echo '</h1>'; }else{ echo '</p>'; } ?>
-  <nav class="header_navi">
-    <ul class="header_navi_list">
-      <?php
-        wp_nav_menu( array(
-          'theme_location' => 'topnavi',
-          'container'      => '',
-          'depth'          => 0,
-          'items_wrap'      => '%3$s'
-        ) );
-      ?>
-    </ul>
+  <nav class="header_navi" id="naviWrap">
+    <div class="header_navi_btn" id="naviBtn">
+      <span class="bou"></span>
+      <span class="bou"></span>
+      <span class="bou"></span>
+      <span class="txt">MENU</span>
+    </div>
+    <div class="header_navi_wrap">
+      <p class="header_navi_close"><span  id="naviClose">×</span></p>
+      <ul class="header_navi_list" id="hdNaviList">
+        <?php
+          wp_nav_menu( array(
+            'theme_location' => 'ftnavi1',
+            'container'      => '',
+            'depth'          => 0,
+            'items_wrap'      => '%3$s'
+          ) );
+          wp_nav_menu( array(
+            'theme_location' => 'ftnavi2',
+            'container'      => '',
+            'depth'          => 0,
+            'items_wrap'      => '%3$s'
+          ) );
+          wp_nav_menu( array(
+            'theme_location' => 'ftnavi3',
+            'container'      => '',
+            'depth'          => 0,
+            'items_wrap'      => '%3$s'
+          ) );
+        ?>
+      </ul>
+    </div>
+    <div class="bg_white" id="naviBg"></div>
   </nav>
 </div>
 </header>

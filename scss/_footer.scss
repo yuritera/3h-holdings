@@ -4,9 +4,23 @@
     @include flexbox;
   }
   &_box{
-    width: 30%;
+    width: 24%;
     border-left:solid 1px #B5B5B5;
     padding-left:1em;
+    .iso_logo{
+      margin-bottom:1em;
+    }
+    .address{
+      font-size: 0.8em;
+      color:#ffffff;
+      a{
+        color:#ffffff;
+        text-decoration: none;
+      }
+      &_txt{
+        margin-bottom:0.8em;
+      }
+    }
   }
   &_navi{
     &_list{
@@ -21,16 +35,38 @@
           display: inline-block;
         }
         >ul{
-          margin:0 0 1.5em 0.5em;
+          margin:0 0 1.5em 0;
         }
         li{
-          font-size: 0.9em;
+          font-size: 0.8em;
           list-style: none;
-          margin-bottom:0.4em;
+          margin-bottom:0.6em;
+          a{
+            color:#B5B5B5;
+          }
           &::before{
             content:"-";
-            color:#ffffff;
+            color:#B5B5B5;
             padding-right:0.2em;
+          }
+        }
+      }
+      &.submenu{
+        font-size:0.8em;
+        margin-bottom:0.8em;
+        >li{
+          >a{
+            margin-bottom:0.6em;
+            &::before{
+              content:" ";
+              display: inline-block;
+              width:6px;
+              height:6px;
+              border-top:solid 1px #ffffff;
+              border-right:solid 1px #ffffff;
+              transform:rotate(45deg) translateX(-1px);
+              margin-right:0.4em;
+            }
           }
         }
       }
