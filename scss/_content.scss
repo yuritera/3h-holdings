@@ -1,10 +1,11 @@
 .content{
   margin-bottom:100px;
   &_head{
-    padding:1em 0 1.6em;
+    padding:1.6em 0 1.6em;
     font-size: 1.8em;
     font-weight: bold;
     text-align: center;
+    width: 100%;
   }
 }
 .entry-content{

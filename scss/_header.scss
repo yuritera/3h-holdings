@@ -27,10 +27,16 @@
       }
       >li{
         position: relative;
-        &.current_page_item{
+        &.current_page_item,
+        &.current-menu-parent{
           a{
             background:#7c7c7c;
             color:#ffffff;
+          }
+          .sub-menu{
+            a{
+              background:#353535;
+            }
           }
         }
         > a{

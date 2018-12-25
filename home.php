@@ -72,7 +72,7 @@ EMO;
     }
     ?>
     </ul>
-    <p class="topnews_more"><a href="">一覧を見る</a></p>
+    <p class="topnews_more"><a href="/news">一覧を見る</a></p>
 </section>
 <section class="home_content">
 <?php

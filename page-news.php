@@ -5,7 +5,7 @@
 if (have_posts()) :
   while (have_posts()) : the_post();
 ?>
-<article class="content">
+<article class="content news">
 <header id="contentHead" class="content_head">
   <h1 class="content_ttl"><?php the_title(); ?></h1>
 </header>
@@ -24,7 +24,7 @@ $first_post_year = $first_post_year->format('Y');
 $this_year = date('Y');
 echo '<nav class="sp news_select">';
 if($first_post_year == $this_year){
-    echo '<p class="only_year">'.$this_year.'</p>';
+    echo '<p class="only_year">'.$this_year.'年</p>';
   }elseif($first_post_year < $this_year){
     echo <<< ELO
   <form class="news_select_form">
@@ -75,7 +75,7 @@ if($year == date('Y') && $post_count < 5){
   $news = new WP_Query($parm);
 }
 if ($news->have_posts()):
-  echo '<main class="newslist">';
+  echo '<main class="news_main">';
   echo '<ul class="news_list">';
   while($news->have_posts()) : $news->the_post();
     $newslink = get_post_meta($post -> ID ,'news_link',true);
