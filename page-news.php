@@ -82,7 +82,7 @@ if ($news->have_posts()):
     if(empty($newslink)){
       $newslink = get_the_permalink();
     }
-    $date1 = new DateTime(get_the_time());
+    $date1 = new DateTime(get_post_time( 'Y/m/d', true ));
     $date2 = new DateTime();
     $diff = $date1->diff($date2)->format('%R%a');
     $day = $date1->format('Y/m/d');
