@@ -51,10 +51,6 @@ img {
   vertical-align: bottom;
 }
 
-hr {
-  display: none;
-}
-
 :root ul {
   letter-spacing: -1px;
   word-spacing: -1px;
@@ -685,6 +681,12 @@ img[class*="attachment-"] {
   -webkit-justify-content: space-between;
   justify-content: space-between;
   margin-bottom: 100px;
+}
+
+.home_content > h2 {
+  font-size: 1.8em;
+  margin-bottom: 1em;
+  width: 100%;
 }
 
 .home_content_item {
