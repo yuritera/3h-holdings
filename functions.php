@@ -54,4 +54,5 @@ function auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
     return $slug;
 }
 add_filter( 'wp_unique_post_slug', 'auto_post_slug', 10, 4  );
+add_theme_support('custom-header');
 ?>

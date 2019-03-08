@@ -1,6 +1,13 @@
 <?php get_header(); ?>
 <div class="ly_wrap">
-<section class="ly_mv mv">
+<?php
+$header_img = get_header_image();
+$title_bg = "style=''";
+if (!empty($header_img)) {
+	$title_bg = " style='background-image:url(".$header_img.");'";
+}
+?>
+<section class="ly_mv mv"<?php echo $title_bg; ?>>
   <div class="mv_bg">
     <div class="ly_inner">
       <h2 class="mv_ttl">3Hについて</h2>
