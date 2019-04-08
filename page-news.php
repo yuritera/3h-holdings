@@ -1,14 +1,20 @@
 <?php get_header(); ?>
 <div class="ly_wrap">
-  <div class="ly_inner">
 <?php
 if (have_posts()) :
   while (have_posts()) : the_post();
 ?>
 <article class="content news">
 <header id="contentHead" class="content_head">
-  <h1 class="content_ttl"><?php the_title(); ?></h1>
+  <?php $ttl_image_id = get_post_meta($post -> ID,'ttl_image',true);
+  if(!empty($ttl_image_id)){
+    $ttl_image = wp_get_attachment_image_src( $ttl_image_id, 'full');
+    $class_add = " image_ttl";
+    $image_style = " style='background-image:url(".$header_img.");'";
+  }
+  ?><h1 class="content_ttl<?php echo $class_add; ?>"<?php echo $image_style; ?>><?php the_title(); ?></h1>
 </header>
+<div class="ly_inner">
 <?php
 $args = array(
     'post_type' => array('post'),
