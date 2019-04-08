@@ -4,17 +4,18 @@
 if (have_posts()) :
   while (have_posts()) : the_post();
 ?>
-<article class="content news">
-<header id="contentHead" class="content_head">
-  <?php $ttl_image_id = get_post_meta($post -> ID,'ttl_image',true);
+<article class="content">
+<?php $ttl_image_id = get_post_meta($post -> ID,'ttl_image',true);
   if(!empty($ttl_image_id)){
     $ttl_image = wp_get_attachment_image_src( $ttl_image_id, 'full');
     $class_add = " image_ttl";
-    $image_style = " style='background-image:url(".$header_img.");'";
+    $image_style = " style='background-image:url(".$ttl_image[0].");'";
   }
-  ?><h1 class="content_ttl<?php echo $class_add; ?>"<?php echo $image_style; ?>><?php the_title(); ?></h1>
+  ?>
+<header id="contentHead" class="content_head<?php echo $class_add; ?>"<?php echo $image_style; ?>>
+  <h1 class="content_ttl"><?php the_title(); ?></h1>
 </header>
-<div class="ly_inner">
+<div class="ly_inner news">
 <?php
 $args = array(
     'post_type' => array('post'),
