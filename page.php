@@ -18,7 +18,11 @@ if (have_posts()) :
 <div class="ly_inner">
 <?php
   echo '<main class="content_main">';
-  echo '<div class="entry-content">';
+  if(is_page('toppage')){
+    echo '<div class="home_content">';
+  }else{
+    echo '<div class="entry-content">';
+  }
   the_content();
   echo '</div>';
   echo '</main>';

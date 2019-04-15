@@ -43,7 +43,15 @@
 <header class="ly_header">
 <div class="ly_inner">
   <?php if(is_home()){echo '<h1'; }else{ echo '<p'; } ?> class="header_logo"><a href="<?php echo home_url( '/' ); ?>">
-  <img src="<?php echo get_template_directory_uri(); ?>/images/sitelogo.png" alt="３H">
+  <?php
+  $sitelogo = esc_url( get_theme_mod( 'logo_url' ) );
+  if(!empty($sitelogo)){
+    echo '<img src="'.$sitelogo.'" alt="３H">';
+  }else{
+    echo bloginfo('name');
+  }
+  ?>
+
   </a><?php if(is_home()){echo '</h1>'; }else{ echo '</p>'; } ?>
   <nav class="header_navi" id="naviWrap">
     <div class="header_navi_btn" id="naviBtn">

@@ -55,4 +55,31 @@ function auto_post_slug( $slug, $post_ID, $post_status, $post_type ) {
 }
 add_filter( 'wp_unique_post_slug', 'auto_post_slug', 10, 4  );
 add_theme_support('custom-header');
+add_filter( 'wp_insert_post_data', function ( $data ) {
+	if ( isset( $_GET['meta-box-loader'] ) ) {
+		unset( $data["post_modified"] );
+		unset( $data["post_modified_gmt"] );
+	}
+
+	return $data;
+} );
+
+add_action( 'customize_register', 'theme_customize' );
+
+function theme_customize($wp_customize){
+
+	$wp_customize->add_section( 'logo_section', array(
+		'title' => 'ロゴ画像',
+		'priority' => 59,
+		'description' => 'ロゴ画像を使用する場合はアップロードしてください。画像を使用しない場合はタイトルがテキストで表示されます。', //セクションの説明
+	));
+	$wp_customize->add_setting( 'logo_url' );
+	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo_url', array(
+			'label' => 'ロゴ画像',
+			'section' => 'logo_section',
+			'settings' => 'logo_url',
+			'description' => 'ロゴ画像を設定してください。',
+    )));
+  }
+
 ?>
