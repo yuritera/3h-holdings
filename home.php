@@ -6,12 +6,12 @@ $title_bg = "style=''";
 if (!empty($header_img)) {
 	$title_bg = " style='background-image:url(".$header_img.");'";
 }
+$mv_txt = nl2br( get_theme_mod( 'mv_txt' ) );
 ?>
 <section class="ly_mv mv"<?php echo $title_bg; ?>>
   <div class="mv_bg">
     <div class="ly_inner">
-      <p class="mv_txt">日本は、急速な超高齢化により、医療・健康に関わる様々な課題を抱えています。一方、AIやビッグデータといったテクノロジーの進歩や医療技術の高度化や個別化などの医療分野の進歩など、医療に関する環境は、高度化、複雑化、そして広範囲化してきております。<br>
-      3Hは、こうした社会の変化に対応し、最新のテクノロジーを活用し、人と企業とをつなぎ、社会の課題を解決していくことで、人が健康で幸せに暮らせる社会の実現に貢献します。</p>
+      <p class="mv_txt"><?php echo $mv_txt; ?></p>
     </div>
   </div>
 </section>

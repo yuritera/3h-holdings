@@ -68,18 +68,25 @@ add_action( 'customize_register', 'theme_customize' );
 
 function theme_customize($wp_customize){
 
-	$wp_customize->add_section( 'logo_section', array(
-		'title' => 'ロゴ画像',
-		'priority' => 59,
-		'description' => 'ロゴ画像を使用する場合はアップロードしてください。画像を使用しない場合はタイトルがテキストで表示されます。', //セクションの説明
-	));
-	$wp_customize->add_setting( 'logo_url' );
-	$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo_url', array(
-			'label' => 'ロゴ画像',
-			'section' => 'logo_section',
-			'settings' => 'logo_url',
-			'description' => 'ロゴ画像を設定してください。',
-    )));
-  }
+$wp_customize->add_section( 'logo_section', array(
+  'title' => 'テーマ設定',
+  'priority' => 59,
+  'description' => 'ロゴ画像・メインビジュアルのテキストが変更できます。',
+));
+$wp_customize->add_setting( 'logo_url' );
+$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'logo_url', array(
+    'label' => 'ロゴ画像',
+    'section' => 'logo_section',
+    'settings' => 'logo_url',
+    'description' => 'ロゴ画像を使用する場合はアップロードしてください。画像を使用しない場合はタイトルがテキストで表示されます。',
+  )));
+$wp_customize->add_setting( 'mv_txt' );
+$wp_customize->add_control( 'mv_txt', array(
+  'settings'  => 'mv_txt',
+  'label'     => 'メインビジュアルのテキストを入力してください。',
+  'section'   => 'logo_section',
+  'type'      => 'textarea',
+));
+}
 
 ?>
