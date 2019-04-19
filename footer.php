@@ -47,7 +47,6 @@
         ) );
       ?>
     </ul>
-    <p class="iso_logo"><img src="<?php echo get_template_directory_uri(); ?>/images/iso_logo.png" alt=""></p>
     <div class="address">
       <p class="address_ttl">住所</p>
       <p class="address_txt">〒171-0022<br>東京都豊島区南池袋1-13-23<br>池袋YSビル2F</p>
